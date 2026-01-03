@@ -1,0 +1,41 @@
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow: hidden; /* ONLY snap container scrolls */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* ================= SNAP CONTAINER ================= */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* ================= EACH SECTION ================= */
+.snap-container > section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  padding-top: 65px; /* navbar space */
+  box-sizing: border-box;
+}
+
+/* ================= LAYOUT HELPERS ================= */
+
+/* Full-width section background */
+.section {
+  width: 100%;
+}
+
+/* Content container (balanced width) */
+.sectionContainer {
+  max-width: auto;     /* 🔑 FIXES SIDE GAP ISSUE */
+  margin: 0 auto;
+  padding: 0 20px;       /* healthy spacing */
+}

@@ -1,0 +1,101 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  z-index: 1000;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: auto;          /* 🔑 INCREASED from 1200 */
+  margin: 0 auto;
+  padding: 0 32px;            /* 🔑 MORE BALANCED SPACING */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  background: linear-gradient(
+    135deg,
+    #93c5fd 0%,
+    #3b82f6 45%,
+    #0ea5e9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= LINKS ================= */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ================= NAV ITEM ================= */
+.link {
+  background: transparent;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #cbd5f5;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+/* ================= HOVER ================= */
+.link:hover {
+  color: #93c5fd;
+  border-color: #60a5fa;
+}
+
+/* ================= ACTIVE ================= */
+.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-color: #2563eb;
+}
+
+/* ================= SCROLL PROGRESS BAR ================= */
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+  z-index: 1001;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;          /* tighter on mobile */
+  }
+
+  .links {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= HTML & BODY ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #e5e7eb;              /* neutral default */
+  background: #020617;        /* dark base */
+  overflow: hidden;           /* 🔑 REQUIRED for snap scroll */
+}
+
+/* ================= ROOT ================= */
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ================= REMOVE VITE DEFAULTS ================= */
+:root {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+/* ================= LINKS ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+}
+
+/* ================= SCROLLBAR (OPTIONAL – CLEAN) ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}

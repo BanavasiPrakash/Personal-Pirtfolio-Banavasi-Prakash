@@ -1,0 +1,109 @@
+/* ================= SKILLS SECTION ================= */
+.skills {
+  min-height: 100vh;                /* 👈 FULL SCREEN HEIGHT */
+  width: 100%;
+  background:
+    radial-gradient(circle at top left, #1e293b, transparent 55%),
+    linear-gradient(135deg, #020617, #020617);
+
+  display: flex;                    /* 👈 CENTER CONTENT */
+  align-items: center;
+  justify-content: center;
+
+  color: #e5e7eb;
+  overflow: hidden;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 100%;
+  max-width: auto;
+  padding: 0 50px;
+  text-align: center;
+}
+
+/* ================= TITLE ================= */
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.underline {
+  width: 90px;
+  height: 4px;
+  margin: 14px auto 60px;
+  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+  border-radius: 10px;
+}
+
+/* ================= FLOW ================= */
+.flowWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.flow {
+  display: flex;
+  gap: 36px;
+  width: max-content;
+  animation: moveLeftToRight 25s linear infinite;
+}
+
+/* ================= SKILL ITEM ================= */
+.skill {
+  min-width: 140px;
+  height: 140px;
+  background: #0b0b0b;
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.icon {
+  font-size: 3rem;
+}
+
+/* BRAND COLORS */
+.icon :global(.fa-html5) { color: #e34f26; }
+.icon :global(.fa-css3-alt) { color: #1572b6; }
+.icon :global(.si-javascript) { color: #f7df1e; }
+.icon :global(.fa-java) { color: #e11d48; }
+.icon :global(.si-mysql) { color: #4479a1; }
+.icon :global(.fa-react) { color: #61dafb; }
+
+.label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .flow {
+    animation-duration: 35s;
+  }
+
+  .skill {
+    min-width: 120px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,186 @@
+/* ================= PROJECTS SECTION ================= */
+.projects {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #1e293b, transparent 55%),
+    linear-gradient(135deg, #020617, #020617);
+  display: flex;
+  align-items: center;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* ================= TITLE ================= */
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.underline {
+  width: 90px;
+  height: 4px;
+  margin: 14px auto 40px;
+  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+  border-radius: 10px;
+}
+
+/* ================= PROJECT GRID (2 PER ROW) ================= */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 2 per row */
+  gap: 28px;
+}
+
+/* ================= PROJECT CARD ================= */
+.card {
+  display: flex;
+  gap: 22px;
+  padding: 18px;
+  border-radius: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  align-items: flex-start;
+}
+
+/* ================= LEFT DETAILS ================= */
+.details {
+  flex: 1;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: #93c5fd;
+  margin-bottom: 10px;
+}
+
+.overview {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #dbeafe;
+  margin-bottom: 8px;
+}
+
+/* ================= TECH ================= */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.techChip {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+/* ================= FEATURES ================= */
+.features {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.features li {
+  margin-bottom: 4px;
+}
+
+/* ================= DEMO ================= */
+.demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* ================= IFRAME IMAGE SLIDER ================= */
+.iframeMock {
+  width: 220px;
+  height: 150px; /* 🔥 fixed height avoids layout jump */
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+  margin-top: 4px;
+}
+
+/* Image auto-fit (no crop) */
+.iframeMock img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  animation: fadeSlide 0.6s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .projectsGrid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .iframeMock {
+    width: 100%;
+    height: 200px;
+  }
+}
