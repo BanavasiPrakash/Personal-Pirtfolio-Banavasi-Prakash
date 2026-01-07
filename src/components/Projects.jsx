@@ -3,7 +3,6 @@ import styles from "./Projects.module.css";
 
 const Projects = () => {
   const projects = [
-
     {
       title: "Real Time IP Network Monitoring Dashboard",
       period: "July 2025 – September 2025",
@@ -32,8 +31,6 @@ const Projects = () => {
       previewImages: ["Ticket-1.png"],
       demo: "#"
     },
-    
-    
     {
       title: "Attendance Tracker System Web Application",
       period: "2025",
@@ -72,7 +69,6 @@ const Projects = () => {
         <h2 className={styles.title}>Projects</h2>
         <div className={styles.underline}></div>
 
-        {/* GRID WITH 2 PROJECTS PER ROW */}
         <div className={styles.projectsGrid}>
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
@@ -125,14 +121,16 @@ const ProjectCard = ({ project }) => {
           rel="noopener noreferrer"
           className={styles.demo}
         >
+          View Demo
         </a>
       </div>
 
-      {/* RIGHT – IMAGE SLIDER */}
+      {/* IMAGE (LAZY LOAD – CORRECT & SAFE) */}
       <div className={styles.iframeMock}>
         <img
           src={project.previewImages[current]}
           alt={`${project.title} preview ${current + 1}`}
+          loading="lazy"
         />
       </div>
     </div>

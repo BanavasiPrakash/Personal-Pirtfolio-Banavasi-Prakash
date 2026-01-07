@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,6 +12,28 @@ import './App.css';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6, // section must be 60% visible
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="App">
       <Navbar
@@ -19,7 +41,6 @@ function App() {
         setActiveSection={setActiveSection}
       />
 
-      {/* SNAP SCROLL CONTAINER */}
       <main className="snap-container">
         <Hero />
         <About />

@@ -1,30 +1,26 @@
 /* ================= SKILLS SECTION ================= */
 .skills {
-  min-height: 100vh;                /* 👈 FULL SCREEN HEIGHT */
   width: 100%;
   background:
     radial-gradient(circle at top left, #1e293b, transparent 55%),
     linear-gradient(135deg, #020617, #020617);
-
-  display: flex;                    /* 👈 CENTER CONTENT */
-  align-items: center;
-  justify-content: center;
-
   color: #e5e7eb;
-  overflow: hidden;
+  padding: 80px 0;              /* 🔥 safer than min-height */
+  overflow-x: hidden;
 }
 
 /* ================= CONTAINER ================= */
 .container {
   width: 100%;
-  max-width: auto;
-  padding: 0 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
   text-align: center;
 }
 
 /* ================= TITLE ================= */
 .title {
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
   font-weight: 800;
   background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
   -webkit-background-clip: text;
@@ -47,15 +43,16 @@
 
 .flow {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   width: max-content;
-  animation: moveLeftToRight 25s linear infinite;
+  animation: moveLeftToRight 28s linear infinite;
+  will-change: transform;
 }
 
 /* ================= SKILL ITEM ================= */
 .skill {
-  min-width: 140px;
-  height: 140px;
+  min-width: 130px;
+  height: 130px;
   background: #0b0b0b;
   border-radius: 18px;
 
@@ -69,7 +66,7 @@
 }
 
 .icon {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 /* BRAND COLORS */
@@ -96,14 +93,47 @@
   }
 }
 
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  .flow {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
+
+/* Tablets */
+@media (max-width: 1024px) {
   .flow {
     animation-duration: 35s;
   }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flow {
+    animation-duration: 45s; /* 🔥 smoother on mobile */
+  }
 
   .skill {
-    min-width: 120px;
-    height: 120px;
+    min-width: 110px;
+    height: 110px;
+  }
+
+  .icon {
+    font-size: 2.4rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .skill {
+    min-width: 100px;
+    height: 100px;
+  }
+
+  .label {
+    font-size: 0.8rem;
   }
 }

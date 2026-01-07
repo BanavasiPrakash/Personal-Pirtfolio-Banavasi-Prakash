@@ -10,13 +10,12 @@ const Experience = () => {
       tag: "Recent",
       logo: "Suprajit.jpeg",
       metrics: [
-        { value: "4 ", label: "Live Applications" },
-        // { value: "500+", label: "Tickets Handled" },
+        { value: "4", label: "Live Applications" },
         { value: "5+", label: "APIs Integrated" }
       ],
       points: [
         "Developed a real-time IT Ticketing Dashboard, IP Network Monitoring system and Attendance Tracker System Web Application.",
-        "Built backend services using Java, Springboot and Node.js with React.js frontend.",
+        "Built backend services using Java, Spring Boot and Node.js with React.js frontend.",
         "Integrated Zoho Desk APIs, managed data using MySQL, and deployed apps on IIS Server."
       ]
     },
@@ -48,7 +47,6 @@ const Experience = () => {
         <div className={styles.horizontalTrack}>
           {experiences.map((exp, index) => (
             <div key={index} className={styles.card}>
-              {/* HEADER */}
               <div className={styles.header}>
                 <div>
                   <h3 className={styles.role}>{exp.role}</h3>
@@ -62,7 +60,6 @@ const Experience = () => {
                 </div>
               </div>
 
-              {/* METRICS */}
               <div className={styles.metrics}>
                 {exp.metrics.map((m, i) => (
                   <div key={i} className={styles.metric}>
@@ -72,7 +69,6 @@ const Experience = () => {
                 ))}
               </div>
 
-              {/* POINTS */}
               <ul className={styles.points}>
                 {exp.points.map((point, i) => (
                   <li key={i}>{point}</li>

@@ -1,12 +1,12 @@
 /* ================= EDUCATION SECTION ================= */
 .education {
-  min-height: 100vh;
   background:
     radial-gradient(circle at top left, #1e293b, transparent 55%),
     radial-gradient(circle at bottom right, rgba(14,165,233,0.15), transparent 45%),
     linear-gradient(135deg, #020617, #020617);
   color: #e5e7eb;
   padding: 80px 0;
+  overflow-x: hidden; /* 🔥 prevents horizontal scroll */
 }
 
 /* ================= CONTAINER ================= */
@@ -19,7 +19,7 @@
 /* ================= TITLE ================= */
 .title {
   text-align: center;
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
   font-weight: 800;
   margin-bottom: 20px;
   background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
@@ -33,17 +33,9 @@
   width: 90px;
   height: 4px;
   margin: 14px auto 0;
-
-  background: linear-gradient(
-    90deg,
-    #3b82f6,
-    #0ea5e9
-  );
-
+  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(59,130,246,0.6);
 }
-
 
 /* ================= LAYOUT ================= */
 .layout {
@@ -55,31 +47,25 @@
 /* ================= TIMELINE ================= */
 .timeline {
   position: relative;
-  padding-left: 42px;
+  padding-left: 36px;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 18px;
+  left: 16px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    #3b82f6,
-    #0ea5e9,
-    rgba(14,165,233,0.15)
-  );
+  background: linear-gradient(180deg, #3b82f6, #0ea5e9);
 }
 
 /* ================= TIMELINE ITEM ================= */
 .timelineItem {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 28px;
-  margin-bottom: 10px;
-  position: relative;
+  grid-template-columns: 90px 1fr;
+  gap: 22px;
+  margin-bottom: 16px;
 }
 
 /* ================= YEAR ================= */
@@ -88,110 +74,73 @@
   font-weight: 700;
   color: #93c5fd;
   text-align: right;
-  padding-top: 4px;
   white-space: nowrap;
 }
 
 /* ================= CARD ================= */
 .card {
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.01)
-  );
-  border-radius: 22px;
-  padding: 10px;
-
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
   position: relative;
 }
 
-/* timeline dot */
+/* DOT */
 .card::before {
   content: "";
   position: absolute;
-  left: -50px;
-  top: 26px;
+  left: -38px;
+  top: 22px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: linear-gradient(135deg, #3b82f6, #0ea5e9);
-  box-shadow:
-    0 0 0 4px rgba(59,130,246,0.25),
-    0 0 16px rgba(14,165,233,0.5);
 }
 
 /* ================= TEXT ================= */
 .degree {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 4px;
 }
 
 .institution {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #93c5fd;
-  margin-bottom: 8px;
 }
 
 .cgpa {
   font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 10px;
   color: #c7d2fe;
 }
 
 .cgpa span {
   color: #22c55e;
   font-weight: 800;
-  margin-left: 6px;
 }
 
 /* ================= HIGHLIGHTS ================= */
 .highlights {
-  padding-left: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  padding-left: 18px;
+  margin-top: 8px;
 }
 
 .highlights li {
-  font-size: 0.9rem;
-  line-height: 1.45;
-  color: #e5e7eb;
+  font-size: 0.88rem;
 }
 
 /* ================= CERTIFICATIONS ================= */
 .certs {
-  position: sticky;
-  top: 120px;
-  height: fit-content;
-
-  background: linear-gradient(
-    180deg,
-    rgba(59,130,246,0.18),
-    rgba(255,255,255,0.03)
-  );
-  border-radius: 24px;
-  padding: 28px;
-
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
+  background: rgba(59,130,246,0.15);
+  border-radius: 22px;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
-/* ================= CERT TEXT ================= */
 .certTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
 }
 
 .certList {
@@ -202,98 +151,57 @@
 
 .certLink {
   font-size: 0.9rem;
-  line-height: 1.55;
-  color: #e5e7eb;
   cursor: pointer;
-  padding-left: 16px;
-  position: relative;
-}
-
-.certLink::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: #38bdf8;
+  color: #e5e7eb;
 }
 
 .certLink:hover {
   color: #38bdf8;
-  text-decoration: underline;
 }
 
-/* ================= MODAL OVERLAY ================= */
+/* ================= MODAL ================= */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(2,6,23,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 3000;
 }
 
-/* ================= MODAL ================= */
 .modal {
   background: #020617;
-  border-radius: 22px;
-
   width: 95%;
-  max-width: 1200px;
-  height: 85vh;
-
-  padding: 24px;
-  border: 1px solid rgba(255,255,255,0.14);
-
+  max-width: 1100px;
+  height: 88vh;
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-/* ================= MODAL HEADER ================= */
 .modalHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .modalHeader h4 {
-  font-size: 1.1rem;
-  color: #ffffff;
+  font-size: 1rem;
 }
 
-.modalHeader button {
-  background: none;
-  border: none;
-  color: #94a3b8;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.modalHeader button:hover {
-  color: #ffffff;
-}
-
-/* ================= IMAGE VIEWER ================= */
 .certViewer {
   flex: 1;
-  width: 100%;
   margin-top: 12px;
-
-  background: #020617;
-  border-radius: 14px;
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.certViewer img {
+.certViewer img,
+.certViewer iframe {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 🔥 no crop */
+  object-fit: contain;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -302,29 +210,29 @@
     grid-template-columns: 1fr;
   }
 
-  .timeline {
-    padding-left: 26px;
-  }
-
   .timelineItem {
     grid-template-columns: 1fr;
   }
 
   .year {
     text-align: left;
-    margin-bottom: 6px;
   }
 
   .card::before {
-    left: -34px;
+    left: -28px;
   }
 
   .certs {
-    position: static;
     margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .degree {
+    font-size: 1.1rem;
   }
 
   .modal {
-    height: 90vh;
+    height: 92vh;
   }
 }

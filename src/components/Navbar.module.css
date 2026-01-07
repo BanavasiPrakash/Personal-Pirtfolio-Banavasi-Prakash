@@ -13,9 +13,9 @@
 
 /* ================= CONTAINER ================= */
 .container {
-  max-width: auto;          /* 🔑 INCREASED from 1200 */
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 32px;            /* 🔑 MORE BALANCED SPACING */
+  padding: 0 24px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -24,27 +24,19 @@
 
 /* ================= LOGO ================= */
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  letter-spacing: 0.6px;
-  background: linear-gradient(
-    135deg,
-    #93c5fd 0%,
-    #3b82f6 45%,
-    #0ea5e9 100%
-  );
+  background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ================= LINKS ================= */
+/* ================= DESKTOP LINKS ================= */
 .links {
   display: flex;
-  align-items: center;
   gap: 14px;
 }
 
-/* ================= NAV ITEM ================= */
 .link {
   background: transparent;
   border: 1px solid rgba(59, 130, 246, 0.35);
@@ -57,20 +49,64 @@
   transition: all 0.25s ease;
 }
 
-/* ================= HOVER ================= */
 .link:hover {
   color: #93c5fd;
   border-color: #60a5fa;
 }
 
-/* ================= ACTIVE ================= */
 .active {
   color: #ffffff;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border-color: #2563eb;
 }
 
-/* ================= SCROLL PROGRESS BAR ================= */
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobileMenu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: rgba(2, 6, 23, 0.98);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  gap: 12px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.mobileLink {
+  background: transparent;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5f5;
+}
+
+.mobileActive {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+}
+
+/* ================= SCROLL BAR ================= */
 .progressBar {
   position: fixed;
   top: 0;
@@ -81,21 +117,12 @@
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 20px;          /* tighter on mobile */
-  }
-
+@media (max-width: 1024px) {
   .links {
-    gap: 10px;
+    display: none;
   }
 
-  .logo {
-    font-size: 1.25rem;
-  }
-
-  .link {
-    padding: 6px 12px;
-    font-size: 0.85rem;
+  .hamburger {
+    display: flex;
   }
 }

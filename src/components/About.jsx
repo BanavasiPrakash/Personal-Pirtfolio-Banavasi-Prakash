@@ -28,7 +28,6 @@ const About = () => {
         <div className={styles.content}>
           {/* TEXT */}
           <div className={styles.text}>
-            {/* Q1 */}
             <h3 className={`${styles.question} ${show ? styles.q1 : ""}`}>
               Who am I?
             </h3>
@@ -40,7 +39,6 @@ const About = () => {
               building scalable applications.
             </p>
 
-            {/* Q2 */}
             <h3 className={`${styles.question} ${show ? styles.q2 : ""}`}>
               What skills do I bring?
             </h3>
@@ -51,7 +49,6 @@ const About = () => {
               and responsive user interfaces.
             </p>
 
-            {/* Q3 */}
             <h3 className={`${styles.question} ${show ? styles.q3 : ""}`}>
               What have I worked on?
             </h3>
@@ -59,22 +56,19 @@ const About = () => {
               During internships at
               <strong> Suprajit Engineering Limited</strong> and
               <strong> Vstand4U Solutions</strong>, I worked on
-              <strong> Real Time IT Ticketing Dashboard</strong> ,
-              <strong> Real Time IP Network Monitoring Dashboard</strong> , 
-              <strong> Personal Portfolio</strong> and  
-              <strong> Attendance Tracker Web Application</strong>, gaining exposure
-              to production workflows and real business requirements.
+              <strong> Real Time IT Ticketing Dashboard</strong>,
+              <strong> Real Time IP Network Monitoring Dashboard</strong>,
+              <strong> Personal Portfolio</strong> and
+              <strong> Attendance Tracker Web Application</strong>.
             </p>
 
-            {/* Q4 */}
             <h3 className={`${styles.question} ${show ? styles.q4 : ""}`}>
               What am I looking for?
             </h3>
             <p className={`${styles.answer} ${show ? styles.a4 : ""}`}>
               I am looking for an
-              <strong> entry-level Java / Full Stack Developer / Backend Developer / Frontend Developer roles </strong>
-              where I can contribute to real-world projects, collaborate with
-              experienced teams, and grow as a professional software engineer.
+              <strong> entry-level Java / Full Stack Developer / Backend / Frontend roles</strong>
+              where I can contribute to real-world projects and grow professionally.
             </p>
           </div>
 

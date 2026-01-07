@@ -1,24 +1,23 @@
 /* ================= PROJECTS SECTION ================= */
 .projects {
-  min-height: 100vh;
   background:
     radial-gradient(circle at top left, #1e293b, transparent 55%),
     linear-gradient(135deg, #020617, #020617);
-  display: flex;
-  align-items: center;
+  padding: 80px 0;
+  overflow-x: hidden;
 }
 
 /* ================= CONTAINER ================= */
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
   width: 100%;
 }
 
 /* ================= TITLE ================= */
 .title {
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
   font-weight: 800;
   text-align: center;
   background: linear-gradient(135deg, #93c5fd, #3b82f6, #0ea5e9);
@@ -34,10 +33,10 @@
   border-radius: 10px;
 }
 
-/* ================= PROJECT GRID (2 PER ROW) ================= */
+/* ================= PROJECT GRID ================= */
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 🔥 2 per row */
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 
@@ -45,35 +44,27 @@
 .card {
   display: flex;
   gap: 22px;
-  padding: 18px;
+  padding: 22px;
   border-radius: 22px;
-
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.04),
     rgba(255, 255, 255, 0.01)
   );
-
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-
   align-items: flex-start;
 }
 
-/* ================= LEFT DETAILS ================= */
+/* ================= DETAILS ================= */
 .details {
   flex: 1;
 }
 
 .projectTitle {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal; /* 🔥 allow wrap */
 }
 
 .period {
@@ -84,9 +75,9 @@
 
 .overview {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #dbeafe;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* ================= TECH ================= */
@@ -114,47 +105,36 @@
 }
 
 .features li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 /* ================= DEMO ================= */
 .demo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  display: inline-block;
+  margin-top: 12px;
   font-weight: 600;
   color: #38bdf8;
   text-decoration: none;
 }
 
-/* ================= IFRAME IMAGE SLIDER ================= */
+/* ================= IMAGE PREVIEW ================= */
 .iframeMock {
   width: 220px;
-  height: 150px; /* 🔥 fixed height avoids layout jump */
+  height: 150px;
   flex-shrink: 0;
-
   border-radius: 16px;
   background: #020617;
   border: 1px solid rgba(255, 255, 255, 0.18);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-  position: relative;
-  margin-top: 4px;
 }
 
-/* Image auto-fit (no crop) */
 .iframeMock img {
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
-  display: block;
   animation: fadeSlide 0.6s ease-in-out;
 }
 
@@ -172,7 +152,7 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .projectsGrid {
-    grid-template-columns: 1fr; /* 1 per row */
+    grid-template-columns: 1fr;
   }
 
   .card {
@@ -182,5 +162,15 @@
   .iframeMock {
     width: 100%;
     height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectTitle {
+    font-size: 1.15rem;
+  }
+
+  .overview {
+    font-size: 0.9rem;
   }
 }

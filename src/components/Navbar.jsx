@@ -3,6 +3,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // SCROLL PROGRESS BAR
   useEffect(() => {
@@ -22,14 +23,31 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   const scrollToSection = (section) => {
     setActiveSection(section);
-    document
-      .getElementById(section)
-      ?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+
+    const el = document.getElementById(section);
+    if (el) {
+      const yOffset = -90; // navbar height offset
+      const y =
+        el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
+
+  const sections = [
+    "home",
+    "about",
+    "education",
+    "skills",
+    "projects",
+    "experience",
+    "contact"
+  ];
 
   return (
     <>
-      {/* SCROLL PROGRESS BAR */}
+      {/* SCROLL PROGRESS */}
       <div
         className={styles.progressBar}
         style={{ width: `${scrollProgress}%` }}
@@ -37,20 +55,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
       <nav className={styles.navbar}>
         <div className={styles.container}>
-          {/* BEAUTIFUL NAME LOGO */}
+          {/* LOGO */}
           <div className={styles.logo}>Banavasi Prakash</div>
 
+          {/* DESKTOP LINKS */}
           <div className={styles.links}>
-            {[
-              "home",
-              "about",
-              "education",
-              "skills",
-              "projects",
-              "experience",
-              "contact",
-             
-            ].map((section) => (
+            {sections.map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -62,7 +72,35 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               </button>
             ))}
           </div>
+
+          {/* HAMBURGER */}
+          <button
+            className={styles.hamburger}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
+
+        {/* MOBILE MENU */}
+        {menuOpen && (
+          <div className={styles.mobileMenu}>
+            {sections.map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className={`${styles.mobileLink} ${
+                  activeSection === section ? styles.mobileActive : ""
+                }`}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
+          </div>
+        )}
       </nav>
     </>
   );

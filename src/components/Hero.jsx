@@ -40,12 +40,15 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE (LCP OPTIMIZED & REACT-SAFE) */}
         <div className={styles.right}>
           <img
             src="/Profile.png"
             alt="Banavasi Prakash"
             className={styles.profileImg}
+            loading="eager"
+            width="280"
+            height="340"
           />
         </div>
 

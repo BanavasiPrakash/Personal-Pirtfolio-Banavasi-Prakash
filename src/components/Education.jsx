@@ -36,7 +36,6 @@ const Education = () => {
     }
   ];
 
-  // ✅ SUPPORTS BOTH IMAGE & PDF
   const certifications = [
     {
       title: "Java Full-Stack Development – Vstand4U Solutions (2025)",
@@ -52,7 +51,6 @@ const Education = () => {
     }
   ];
 
-  // 🔍 detect file type
   const isPDF = (file) => file.toLowerCase().endsWith(".pdf");
 
   return (
@@ -61,7 +59,7 @@ const Education = () => {
         <h2 className={styles.title}>Education & Certifications</h2>
 
         <div className={styles.layout}>
-          {/* EDUCATION TIMELINE */}
+          {/* TIMELINE */}
           <div className={styles.timeline}>
             {education.map((edu, index) => (
               <div key={index} className={styles.timelineItem}>
@@ -103,7 +101,7 @@ const Education = () => {
         </div>
       </div>
 
-      {/* CERTIFICATE MODAL */}
+      {/* MODAL */}
       {activeCert && (
         <div
           className={styles.modalOverlay}
@@ -120,15 +118,9 @@ const Education = () => {
 
             <div className={styles.certViewer}>
               {isPDF(activeCert.file) ? (
-                <iframe
-                  src={activeCert.file}
-                  title="Certificate PDF"
-                />
+                <iframe src={activeCert.file} title="Certificate PDF" />
               ) : (
-                <img
-                  src={activeCert.file}
-                  alt={activeCert.title}
-                />
+                <img src={activeCert.file} alt={activeCert.title} />
               )}
             </div>
           </div>

@@ -25,14 +25,11 @@ const Skills = () => {
   return (
     <section id="skills" className={styles.skills}>
       <div className={styles.container}>
-        {/* SECTION TITLE */}
         <h2 className={styles.title}>Skills</h2>
         <div className={styles.underline}></div>
 
-        {/* FLOW WRAPPER */}
         <div className={styles.flowWrapper}>
           <div className={styles.flow}>
-            {/* duplicate list for seamless loop */}
             {[...skills, ...skills].map((skill, index) => (
               <div key={index} className={styles.skill}>
                 <div className={styles.icon}>{skill.icon}</div>

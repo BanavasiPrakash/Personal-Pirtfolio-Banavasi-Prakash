@@ -26,12 +26,7 @@ const Contact = () => {
     setStatus("loading");
 
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        formData,
-        PUBLIC_KEY
-      );
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY);
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch {
@@ -42,7 +37,7 @@ const Contact = () => {
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.wrapper}>
-        {/* LEFT – CONVERSATION */}
+        {/* LEFT */}
         <div className={styles.left}>
           <h2 className={styles.heading}>Let’s start a conversation</h2>
           <p className={styles.subText}>
@@ -56,6 +51,7 @@ const Contact = () => {
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
+              autoComplete="name"
               required
             />
             <input
@@ -64,6 +60,7 @@ const Contact = () => {
               placeholder="Your email"
               value={formData.email}
               onChange={handleChange}
+              autoComplete="email"
               required
             />
             <textarea
@@ -89,7 +86,7 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* RIGHT – QUICK CONTACT */}
+        {/* RIGHT */}
         <div className={styles.right}>
           <div className={styles.quick}>
             <FiMail />
@@ -107,10 +104,18 @@ const Contact = () => {
           </div>
 
           <div className={styles.socials}>
-            <a href="https://www.linkedin.com/in/banavasiprakash/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/in/banavasiprakash/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
           </div>
